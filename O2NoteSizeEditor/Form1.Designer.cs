@@ -86,7 +86,7 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -96,6 +96,7 @@
             this.RoundWhite.Name = "RoundWhite";
             this.RoundWhite.Size = new System.Drawing.Size(72, 20);
             this.RoundWhite.TabIndex = 1;
+            this.RoundWhite.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_Check);
             // 
             // RoundBlue
             // 
@@ -103,6 +104,7 @@
             this.RoundBlue.Name = "RoundBlue";
             this.RoundBlue.Size = new System.Drawing.Size(71, 20);
             this.RoundBlue.TabIndex = 2;
+            this.RoundBlue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_Check);
             // 
             // RoundYellow
             // 
@@ -110,6 +112,7 @@
             this.RoundYellow.Name = "RoundYellow";
             this.RoundYellow.Size = new System.Drawing.Size(71, 20);
             this.RoundYellow.TabIndex = 3;
+            this.RoundYellow.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_Check);
             // 
             // SquareWhite
             // 
@@ -117,6 +120,7 @@
             this.SquareWhite.Name = "SquareWhite";
             this.SquareWhite.Size = new System.Drawing.Size(71, 20);
             this.SquareWhite.TabIndex = 4;
+            this.SquareWhite.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_Check);
             // 
             // SquareBlue
             // 
@@ -124,6 +128,7 @@
             this.SquareBlue.Name = "SquareBlue";
             this.SquareBlue.Size = new System.Drawing.Size(72, 20);
             this.SquareBlue.TabIndex = 5;
+            this.SquareBlue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_Check);
             // 
             // SquareYellow
             // 
@@ -131,6 +136,7 @@
             this.SquareYellow.Name = "SquareYellow";
             this.SquareYellow.Size = new System.Drawing.Size(71, 20);
             this.SquareYellow.TabIndex = 6;
+            this.SquareYellow.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_Check);
             // 
             // RoundNoteBox
             // 

@@ -77,36 +77,51 @@ namespace O2NoteSizeEditor
                     SquareWhite.Text = NoteHeights[3].ToString();
                     SquareBlue.Text = NoteHeights[4].ToString();
                     SquareYellow.Text = NoteHeights[5].ToString();
-
-
                 }
-
-
             }
-        }
-
-        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (binPath == null) 
+            {
+                MessageBox.Show("You must open OTwo.exe (or other client) first!", "Error");
+                return;
+            }
+
             NoteHeights.Clear();
 
             foreach(Control c in RoundNoteBox.Controls)
             {
-                if(c.GetType() == typeof(TextBox))
+                if(c.GetType() == typeof(TextBox)) // Get the new height values for round notes.
                 {
-                    NoteHeights.Add(Convert.ToInt32(c.Text));       //Get the new height values for round notes.
+                    if (c.Text == "") 
+                     {
+                        c.Text = "1";
+
+                        NoteHeights.Add(1); // Set it to 1 in-case user set it empty
+                    } 
+                    else 
+                    {
+                        NoteHeights.Add(Convert.ToInt32(c.Text));
+                    }
                 }
             }
 
             foreach(Control c in SquareNoteBox.Controls)
             {
-                if(c.GetType() == typeof(TextBox))
+                if(c.GetType() == typeof(TextBox)) // Get new height values for the square notes.
                 {
-                    NoteHeights.Add(Convert.ToInt32(c.Text));       //Get new height values for the square notes.
+                    if (c.Text == "") 
+                    {
+                        c.Text = "1";
+
+                        NoteHeights.Add(1); // Set it to 1 in-case user set it empty
+                    } 
+                    else 
+                    {
+                        NoteHeights.Add(Convert.ToInt32(c.Text));
+                    }
                 }
             }
 
@@ -165,12 +180,15 @@ namespace O2NoteSizeEditor
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
             string title = "About";
             string message = "Note height changer by iraq n roll";
             MessageBoxButtons btn = MessageBoxButtons.OK;
             DialogResult aboutresult = MessageBox.Show(message, title, btn);
+        }
 
+        public void textbox_Check(object sender, KeyPressEventArgs e) 
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }
